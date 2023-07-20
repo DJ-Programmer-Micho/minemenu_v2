@@ -32,7 +32,7 @@ Route::get('/admin', function(){
 })->name('admin')->middleware('admin');
 
 Route::get('/rest', function(){
-    return view('dashboard.rest.rest');
+    return view('dashboard.rest.pages.dashboard');
 })->name('rest')->middleware('rest');
 
 Route::get('/emp', function(){
