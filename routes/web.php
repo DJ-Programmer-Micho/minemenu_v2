@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\SuperAdmin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/met', function(){
+    return view('dashboard.met.met');
+})->name('superadmin')->middleware('superadmin');
+
+Route::get('/admin', function(){
+    return view('dashboard.admin.admin');
+})->name('admin')->middleware('admin');
+
+Route::get('/rest', function(){
+    return view('dashboard.rest.rest');
+})->name('rest')->middleware('rest');
+
+Route::get('/emp', function(){
+    return view('dashboard.emp.emp');
+})->name('emp')->middleware('emp');
