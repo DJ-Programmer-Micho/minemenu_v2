@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <x-dashboard.test :text="Auth::user()->name"/>
                 </div>
             </div>
         </div>

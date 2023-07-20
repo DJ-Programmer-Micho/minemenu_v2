@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{-- {{ __('You are logged in!') }} --}}
+                    <x-dashboard.test :text="Auth::user()->name"/>
+                    <x-main.test :text="Auth::user()->email"/>
                 </div>
             </div>
         </div>
